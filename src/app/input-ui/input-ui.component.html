@@ -1,0 +1,30 @@
+
+
+<h4 class="input-head1">Simple Input</h4>
+<div class="simple-inputs">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Type text...">
+</div><br>
+
+<h4 class="input-head1">Email Input</h4>
+<div class="simple-inputs">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field-email" type="text" (ngModelChange)="EmailValidate($event)"
+    [(ngModel)]="selectedNode" placeholder="Enter Email ID" [pattern]="EmailPattern">
+     <div class="valid-msg" *ngIf="emailValidation">{{EmailMsg}}</div>
+</div><br>
+
+<h4 class="input-head1">Phone Input</h4>
+<div class="simple-inputs">
+    <i class="fa fa-phone icon"></i>
+    <input class="input-field-phone10" type="text" (ngModelChange)="PhoneValidate($event)"
+    [(ngModel)]="selectedNode1" placeholder="Enter Phone Number" [pattern]="PhonePattern">
+    <p class="valid-phone">(Validation till 10 digits Phone Numbers)</p>
+    <div class="valid-msg" *ngIf="phoneValidation">{{PhoneMsg}}</div><br>
+
+    <i class="fa fa-phone icon"></i>
+    <input class="input-field-phone1012" type="text" (ngModelChange)="PhoneValidate1($event)"
+    [(ngModel)]="selectedNode2" placeholder="Enter Phone Number" [pattern]="PhonePattern1">
+    <p class="valid-phone">(Validation for Min. 10 & Max 12 digits Phone Numbers)</p>
+    <div class="valid-msg" *ngIf="phoneValidation1">{{PhoneMsg1}}</div>
+</div>

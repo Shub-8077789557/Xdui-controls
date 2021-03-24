@@ -1,0 +1,14 @@
+.dropdown-adjust {
+    font-size: 20px;
+    width: 40%;
+    height: 35px;
+    margin-top: 25px;
+    margin-left: 20px;
+    border-radius: 3px;
+    border: 1px solid #8b8b8b;
+}
+
+.buttons-head {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }

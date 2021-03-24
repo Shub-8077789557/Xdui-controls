@@ -1,0 +1,70 @@
+.icon {
+  padding: 8px;
+  font-size: 20px;
+  background: dodgerblue;
+  color: white;
+  width: 35px;
+  text-align: center;
+  }
+
+  .input-head1 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .input-field {
+    width: 40%;
+    padding: 4px;
+    font-size: 20px;
+    outline: none;
+  }
+  
+  .input-field:focus {
+    border: 2px solid dodgerblue;
+  }
+
+  .input-field-email {
+    width: 40%;
+    padding: 4px;
+    font-size: 20px;
+    outline: none;
+  }
+
+  .input-field-email:focus {
+    border: 2px solid dodgerblue;
+  }
+
+  .input-field-phone10 {
+    width: 40%;
+    padding: 4px;
+    font-size: 20px;
+    outline: none;
+  }
+
+  .input-field-phone10:focus {
+    border: 2px solid dodgerblue;
+  }
+
+  .input-field-phone1012 {
+    width: 40%;
+    padding: 4px;
+    font-size: 20px;
+    outline: none;
+  }
+
+  .input-field-phone1012:focus {
+    border: 2px solid dodgerblue;
+  }
+
+  .valid-msg {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 25px;
+    color: #ff0000;
+}
+
+p.valid-phone {
+    font-size: 14px;
+    margin-top: -30px;
+    margin-left: 560px;
+}
