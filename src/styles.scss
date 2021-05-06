@@ -15,6 +15,13 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
   }
+
+  .sidenav {
+    background-image: url('assets/background-image.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
   
   .sidenav a {
     padding: 6px 8px 6px 16px;
