@@ -57,6 +57,21 @@
     border: 2px solid dodgerblue;
   }
 
+  .input-field-phone {
+    width: 38%;
+    padding: 4px;
+    top: -42px;
+    left: -23px;
+    position: relative;
+    margin-left: 80px;
+    font-size: 20px;
+    outline: none;
+}
+
+.input-field-phone:focus {
+  border: 2px solid dodgerblue;
+}
+
   .valid-msg {
     font-size: 15px;
     margin-left: 10px;
@@ -64,8 +79,37 @@
     color: #ff0000;
 }
 
+.valid-msg1 {
+  font-size: 15px;
+  margin-left: 580px;
+  margin-top: -75px;
+  color: #ff0000;
+}
+
+label.note-adjust {
+  font-size: 14px;
+  color: dodgerblue;
+  padding-top: 5px;
+  margin-left:-525px;
+  font-style: italic;
+}
+
 p.valid-phone {
     font-size: 14px;
     margin-top: -30px;
     margin-left: 560px;
+}
+
+.country-dropdown-adjust {
+  font-size: 20px;
+    width: 5%;
+    height: 35px;
+    margin-top: 25px;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #8b8b8b;
+}
+
+.comp-panel-country {
+   width: 85px;
 }

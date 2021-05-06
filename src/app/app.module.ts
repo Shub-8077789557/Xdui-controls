@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { OrderByPipe } from './order-by.pipe';
 import { FilterPipe } from './filter-pipe';
+import { ShareDataService } from './share-data.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { FilterPipe } from './filter-pipe';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [ShareDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

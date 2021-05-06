@@ -16,15 +16,14 @@
 
 <h4 class="input-head1">Phone Input</h4>
 <div class="simple-inputs">
-    <i class="fa fa-phone icon"></i>
-    <input class="input-field-phone10" type="text" (ngModelChange)="PhoneValidate($event)"
-    [(ngModel)]="selectedNode1" placeholder="Enter Phone Number" [pattern]="PhonePattern">
-    <p class="valid-phone">(Validation till 10 digits Phone Numbers)</p>
-    <div class="valid-msg" *ngIf="phoneValidation">{{PhoneMsg}}</div><br>
-
-    <i class="fa fa-phone icon"></i>
-    <input class="input-field-phone1012" type="text" (ngModelChange)="PhoneValidate1($event)"
-    [(ngModel)]="selectedNode2" placeholder="Enter Phone Number" [pattern]="PhonePattern1">
-    <p class="valid-phone">(Validation for Min. 10 & Max 12 digits Phone Numbers)</p>
-    <div class="valid-msg" *ngIf="phoneValidation1">{{PhoneMsg1}}</div>
+    <div class="country-dropdown-adjust">
+        <mat-select panelClass="comp-panel-country" (selectionChange)="getCountry($event.value)">
+            <mat-option class="text-justify" *ngFor="let comp of countries"
+                [value]="comp"><img src={{comp.country}} width="40" height="30">  {{comp.countryCode}}</mat-option>
+        </mat-select>
+    </div>
+    <input [disabled]="fieldDisable" class="input-field-phone" type="text" (ngModelChange)="countriesPhoneValidation($event)"
+    [(ngModel)]="selectedNode1" placeholder="Enter Phone Number" [pattern]="PhonePatternValid">
+    <label class="note-adjust">(Please select country first and then enter phone number)</label>
+    <div class="valid-msg1" *ngIf="phoneValidation">{{PhoneMsg}}</div><br>
 </div>

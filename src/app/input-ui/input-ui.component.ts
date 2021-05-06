@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShareDataService } from '../share-data.service';
 
 @Component({
   selector: 'app-input-ui',
@@ -10,7 +11,7 @@ export class InputUiComponent implements OnInit {
   EmailMsg: string;
   EmailPattern = '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$';
   PhonePattern = '^[0-9]{10}$';
-  PhonePattern1 = '^[0-9]{10,12}$'
+  PhonePattern1 = '^[0-9]{9}$'
   selectedNode: string;
   selectedNode1: string;
   selectedNode2: string;
@@ -18,10 +19,21 @@ export class InputUiComponent implements OnInit {
   phoneValidation: boolean;
   phoneValidation1: boolean;
   PhoneMsg1: string;
+  PhonePatternValid: string;
+  countries = [];
+  fieldDisable: boolean;
 
-  constructor() { }
+  constructor(private shareDataService: ShareDataService) { }
 
   ngOnInit(): void {
+    this.countries = [
+      {countryCode: '+91', country: './../../assets/India-img.png'},
+      {countryCode: '+1', country: './../../assets/Usa-img.png'},
+      {countryCode: '+1', country: './../../assets/Canada-img.png'},
+      {countryCode: '+44', country: './../../assets/Uk-img.png'},
+      {countryCode: '+31', country: './../../assets/Netherland-img.png'}
+    ];
+    this.fieldDisable = true;
   }
 
   testEmail(event) {
@@ -35,7 +47,7 @@ export class InputUiComponent implements OnInit {
   }
 
   testPhoneNumber1(event) {
-    let regexp = new RegExp('^[0-9]{10,12}$');
+    let regexp = new RegExp('^[0-9]{9}$');
     return regexp.test(event);
   }
 
@@ -87,4 +99,47 @@ export class InputUiComponent implements OnInit {
     }
   }
 
+  getCountry(value) {
+    this.fieldDisable = false;
+   this.shareDataService.setApprovedSection(value);
+  }
+
+  countriesPhoneValidation(event) {
+    this.shareDataService.getApprovedSection().subscribe((res: any) => {
+      if((res['countryCode'] === '+91') || (res['countryCode'] === '+1') || (res['countryCode'] === '+44')) {
+        this.PhonePatternValid = this.PhonePattern;
+        if (!this.testPhoneNumber(event)) {
+          this.phoneValidation = true;
+          this.PhoneMsg = 'Phone Number is Invalid !';
+        }
+    
+        if (this.testPhoneNumber(event)) {
+          this.phoneValidation = false;
+        }
+    
+        if (event == '') {
+          this.phoneValidation = true;
+          this.PhoneMsg = 'Phone Number Input is Empty !';
+        }
+      }
+
+      if((res['countryCode'] === '+31')) {
+        this.PhonePatternValid = this.PhonePattern1;
+        if (!this.testPhoneNumber1(event)) {
+          this.phoneValidation = true;
+          this.PhoneMsg = 'Phone Number is Invalid !';
+        }
+    
+        if (this.testPhoneNumber1(event)) {
+          this.phoneValidation = false;
+        }
+    
+        if (event == '') {
+          this.phoneValidation = true;
+          this.PhoneMsg = 'Phone Number Input is Empty !';
+        }
+      }
+    })
+    
+  }
 }
