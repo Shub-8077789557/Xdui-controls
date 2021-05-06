@@ -43,20 +43,26 @@
 
 
 <h4 class="buttons-head">Selection With Chips</h4>
+<mat-chip-list>
+    <mat-chip *ngFor="let topping of toppingsControl.value"
+      [removable]="true" (removed)="onToppingRemoved(topping)">
+      {{ topping }}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
 <div class="dropdown-adjust">
-    <mat-select [formControl]="toppingsControl" placeholder="Select Toppings" multiple>
-
-        <mat-select-trigger>
-            <mat-chip-list>
-              <mat-chip *ngFor="let topping of toppingsControl.value"
-                [removable]="true" (removed)="onToppingRemoved(topping)">
-                {{ topping }}
-                <mat-icon matChipRemove>cancel</mat-icon>
-              </mat-chip>
-            </mat-chip-list>
-          </mat-select-trigger>
+    <mat-select [formControl]="toppingsControl" placeholder="Select Toppings" multiple>       
+          <div class="input-group mb-3 search-input">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                    <mat-icon>search</mat-icon>
+                </span>
+            </div>
+            <input type="text" class="form-control" placeholder="Enter Search key here..." [(ngModel)]="search"
+                [ngModelOptions]="{standalone: true}" aria-describedby="basic-addon1">
+        </div>
       
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          <mat-option *ngFor="let topping of toppingList | filterPipe : search" [value]="topping">{{topping}}</mat-option>
     
       </mat-select>
 </div>
