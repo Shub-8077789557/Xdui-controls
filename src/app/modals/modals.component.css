@@ -1,0 +1,70 @@
+.modals-head {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+
+  mat-dialog-actions.mat-dialog-actions.action-btns {
+    float: right;
+    margin-bottom: 0px;
+}
+
+h2.dialog-head {
+    border-bottom: 1px solid #8b8b8b;
+    margin-bottom: 25px;
+}
+
+.outline {
+    outline: none;
+}
+
+.button-primary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin-left: 25px;
+    font-size: 20px;
+    background: rgb(66, 184, 221);
+}
+
+
+.button-primary:focus  {
+  box-shadow:  0 0 10px 0px rgb(66, 184, 221);
+}
+
+.button-success {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(28, 184, 65);
+  margin-left: 25px;
+  font-size: 20px;
+}
+
+
+.button-success:focus {
+box-shadow:  0 0 10px 0px rgb(28, 184, 65);
+}
+
+.button-warning {
+    background: rgb(223, 117, 20);
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin-left: 25px;
+    font-size: 20px;
+   
+}
+
+.button-warning:focus {
+  box-shadow:  0 0 10px 0px rgb(223, 117, 20);
+}
+
+.modal-adjust {
+    text-align: center;
+}
+
+mat-dialog-actions.mat-dialog-actions.action-btns-confirm {
+    float: right;
+    margin-bottom: -20px;
+}

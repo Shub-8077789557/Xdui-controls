@@ -12,6 +12,7 @@ import { MaterialModule } from './material.module';
 import { OrderByPipe } from './order-by.pipe';
 import { FilterPipe } from './filter-pipe';
 import { ShareDataService } from './share-data.service';
+import { ModalsComponent } from './modals/modals.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ShareDataService } from './share-data.service';
     InputUiComponent,
     DropdownComponent,
     OrderByPipe,
-    FilterPipe
+    FilterPipe,
+    ModalsComponent
   ],
   imports: [
     BrowserModule,
